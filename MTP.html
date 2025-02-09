@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three-Sided Dice Roller</title>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #800000; /* Wine Red Background */
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 10%, rgba(255, 255, 255, 0.4) 25%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.4) 75%, rgba(255, 255, 255, 0.1) 90%);
+    background-size: 300% 300%;
+    animation: waveBackground 5s ease-in-out infinite; /* Faster animation */
+  }
+
+  @keyframes waveBackground {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  .cube-container {
+    perspective: 2400px;
+  }
+
+  .cube {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
+
+  .face {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background-size: cover; /* Ensures the image covers the face */
+    background-position: center;
+    border: 6px solid #333;
+  }
+
+  .face1 {
+    transform: rotateY(0deg) translateZ(225px);
+    background-image: url("C:/Users/Raf/Desktop/randomshawarma/HaveMaltesers.png"); 
+  }
+
+  .face2 {
+    transform: rotateY(120deg) translateZ(225px);
+    background-image: url("C:/Users/Raf/Desktop/randomshawarma/HavePepsi.png"); 
+  }
+
+  .face3 {
+    transform: rotateY(240deg) translateZ(225px);
+    background-image: url("C:/Users/Raf/Desktop/randomshawarma/HaveTulipCure.png"); 
+  }
+
+  .instruction {
+    margin-top: 120px; /* Move the instruction text down */
+    padding: 20px;
+    font-size: 24px;
+    font-style: italic;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for highlight effect */
+  }
+</style>
+</head>
+<body>
+
+<div class="cube-container">
+  <div class="cube" id="dice">
+    <div class="face face1"></div>
+    <div class="face face2"></div>
+    <div class="face face3"></div>
+  </div>
+</div>
+
+<div class="instruction">Press Space Bar to Roll!</div>
+
+<script>
+  function rollDice() {
+    const dice = document.getElementById('dice');
+    const randomSide = Math.floor(Math.random() * 3) + 1;
+
+    const rotations = {
+      1: 'rotateY(0deg)',
+      2: 'rotateY(-120deg)',
+      3: 'rotateY(-240deg)'
+    };
+
+    dice.style.transform = rotations[randomSide];
+  }
+
+  document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+      rollDice();
+    }
+  });
+</script>
+
+</body>
+</html>
