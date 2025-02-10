@@ -111,7 +111,7 @@
   function rollDice() {
     const dice = document.getElementById('dice');
     const randomSide = Math.floor(Math.random() * 3) + 1;
-    const spins = Math.floor(Math.random() * 4 + 3) * 360; // More spins for slot machine effect
+    const spins = Math.floor(Math.random() * 4 + 3) * 360; 
 
     const rotations = {
       1: `rotateY(${0 + spins}deg)`,
