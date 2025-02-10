@@ -87,6 +87,25 @@
     user-select: text;
     font-size: 14px;
   }
+
+  .angled-text {
+    position: fixed;
+    left: 10px;
+    color: white;
+    font-family: serif;
+    font-style: italic;
+    font-size: 24px;
+  }
+
+  .roulette {
+    top: 20%;
+    transform: rotate(-45deg);
+  }
+
+  .roll {
+    bottom: 20%;
+    transform: rotate(-120deg);
+  }
 </style>
 </head>
 <body>
@@ -102,6 +121,9 @@
 <div class="instruction">!رمي النرد</div>
 
 <div class="hidden-text">I promise I will try playing Tarneeb!</div>
+
+<div class="angled-text roulette">Roulette</div>
+<div class="angled-text roll">Roll</div>
 
 <script>
   function rollDice() {
