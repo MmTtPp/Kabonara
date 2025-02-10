@@ -94,18 +94,19 @@
     font-family: serif;
     font-style: italic;
     white-space: nowrap;
+    font-size: 14px; /* Reduced size */
   }
 
   .angled-text.roulette {
     left: 10px;
-    font-size: 72px; /* Increased size */
+    top: 50%; /* Vertically center */
+    transform: translateY(-50%); /* Adjust to align */
   }
 
   .angled-text.roll {
-    left: 10px; /* Now on the left side */
-    bottom: 50px;
-    transform: rotate(-120deg);
-    font-size: 72px; /* Increased size */
+    right: 10px;
+    top: 50%; /* Vertically center */
+    transform: translateY(-50%); /* Adjust to align */
   }
 </style>
 </head>
