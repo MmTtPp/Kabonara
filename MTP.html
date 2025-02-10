@@ -13,8 +13,8 @@
     height: 100vh;
     margin: 0;
     background: linear-gradient(135deg, #FF99CC 15%, #FF66B2 35%, #FF3385 55%, #FF66B2 75%, #FF99CC 95%);
-    background-size: 400% 400%;
-    animation: melodyWaves 8s ease-in-out infinite;
+    background-size: 200% 200%;
+    animation: melodyWaves 3s linear infinite;
   }
 
   @keyframes melodyWaves {
@@ -38,7 +38,7 @@
     width: 450px;
     height: 450px;
     transform-style: preserve-3d;
-    transition: transform 1s;
+    transition: transform 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   }
 
   .face {
@@ -111,12 +111,12 @@
   function rollDice() {
     const dice = document.getElementById('dice');
     const randomSide = Math.floor(Math.random() * 3) + 1;
-    const extraSpins = Math.floor(Math.random() * 3 + 1) * 360; // Extra rotations for a dynamic feel
+    const spins = Math.floor(Math.random() * 4 + 3) * 360; // More spins for slot machine effect
 
     const rotations = {
-      1: `rotateY(${0 + extraSpins}deg)`,
-      2: `rotateY(${-120 + extraSpins}deg)`,
-      3: `rotateY(${-240 + extraSpins}deg)`
+      1: `rotateY(${0 + spins}deg)`,
+      2: `rotateY(${-120 + spins}deg)`,
+      3: `rotateY(${-240 + spins}deg)`
     };
 
     dice.style.transform = rotations[randomSide];
