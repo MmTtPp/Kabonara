@@ -14,8 +14,8 @@
     margin: 0;
     background-color: #FF9999;
     background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.6), transparent 40%),
-                      radial-gradient(circle at 80% 80%, rgba(255, 255, 0.4), transparent 50%),
-                      linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 0.75) 75%, transparent 75%, transparent);
+                      radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.4), transparent 50%),
+                      linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
     background-size: 400% 400%;
     animation: waveBackground 6s ease-in-out infinite;
   }
@@ -90,23 +90,22 @@
 
   .angled-text {
     position: fixed;
+    left: 10px;
     color: white;
     font-family: serif;
     font-style: italic;
+    font-size: 24px;
     white-space: nowrap;
-    font-size: 14px; /* Reduced size */
   }
 
-  .angled-text.roulette {
-    left: 10px;
-    top: 50%; /* Vertically center */
-    transform: translateY(-50%); /* Adjust to align */
+  .roulette {
+    top: 50px;
+    transform: rotate(-45deg);
   }
 
-  .angled-text.roll {
-    right: 10px;
-    top: 50%; /* Vertically center */
-    transform: translateY(-50%); /* Adjust to align */
+  .roll {
+    bottom: 50px;
+    transform: rotate(-120deg);
   }
 </style>
 </head>
@@ -150,3 +149,4 @@
 
 </body>
 </html>
+
