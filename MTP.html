@@ -14,8 +14,8 @@
     margin: 0;
     background-color: #FF9999;
     background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.6), transparent 40%),
-                      radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.4), transparent 50%),
-                      linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+                      radial-gradient(circle at 80% 80%, rgba(255, 255, 0.4), transparent 50%),
+                      linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 0.75) 75%, transparent 75%, transparent);
     background-size: 400% 400%;
     animation: waveBackground 6s ease-in-out infinite;
   }
@@ -98,13 +98,14 @@
 
   .angled-text.roulette {
     left: 10px;
-    font-size: 256px; /* Increased size */
+    font-size: 72px; /* Increased size */
   }
 
   .angled-text.roll {
-    right: 50px;
+    left: 10px; /* Now on the left side */
+    bottom: 50px;
     transform: rotate(-120deg);
-    font-size: 256px; /* Increased size */
+    font-size: 72px; /* Increased size */
   }
 </style>
 </head>
